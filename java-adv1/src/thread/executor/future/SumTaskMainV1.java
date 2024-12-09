@@ -54,6 +54,7 @@ public class SumTaskMainV1 {
             for (int i = startValue; i <= endValue; i++) {
                 sum += i;
             }
+            result = sum;
 
             log("작업 완료 result = " + result);
         }
