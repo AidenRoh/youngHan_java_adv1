@@ -17,4 +17,15 @@ public abstract class ExecutorUtils {
                     + queuedTasks + ", completedTasks=" + completedTasks + "]");
         }
     }
+
+    public static void printState(ExecutorService service, String taskName) {
+        if (service instanceof ThreadPoolExecutor poolExecutor) {
+            int pool = poolExecutor.getPoolSize();
+            int active = poolExecutor.getActiveCount();
+            int queuedTasks = poolExecutor.getQueue().size();
+            long completedTasks = poolExecutor.getCompletedTaskCount();
+            log("[pool=" + pool + ", active=" + active + ", queuedTasks="
+                    + queuedTasks + ", completedTasks=" + completedTasks + "]");
+        }
+    }
 }
